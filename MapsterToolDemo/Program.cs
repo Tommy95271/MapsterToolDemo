@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MapsterToolDemo.AttributeBase;
+using System;
 
 namespace MapsterToolDemo
 {
@@ -6,7 +7,11 @@ namespace MapsterToolDemo
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var extensionMethod = new ExtensionMethod() { LastName = "Tom", FirstName = "Cruise" };
+            var extensionMethodDto = ExtensionMethodMapper.AdaptToDto(extensionMethod);
+            var extensionMethodDto2 = ExtensionMethodMapper.AdaptTo(extensionMethod, null);
+            Console.ReadLine();
+
         }
     }
 }
