@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MapsterToolDemo.AttributeBase
+namespace AttributeBase
 {
     [AdaptFrom("[name]Merge", IgnoreNullValues = true)]
     public class NullableProp

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MapsterToolDemo.AttributeBase
+namespace AttributeBase
 {
     [AdaptTo("[name]Dto"), GenerateMapper]
     public class ExtensionMethod

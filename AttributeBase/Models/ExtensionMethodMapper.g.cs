@@ -1,6 +1,6 @@
-using MapsterToolDemo.AttributeBase;
+using AttributeBase;
 
-namespace MapsterToolDemo.AttributeBase
+namespace AttributeBase
 {
     public static partial class ExtensionMethodMapper
     {

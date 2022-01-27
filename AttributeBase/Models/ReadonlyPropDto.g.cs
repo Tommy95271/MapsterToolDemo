@@ -1,4 +1,4 @@
-namespace MapsterToolDemo.AttributeBase
+namespace AttributeBase
 {
     public partial class ReadonlyPropDto
     {

@@ -6,14 +6,14 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MapsterToolDemo.AttributeBase
+namespace AttributeBase
 {
-    [AdaptTo("[name]Dto", IgnoreAttributes = new[] { typeof(DataMemberAttribute) })]
-    internal class IgnoreAttributes
+    [AdaptTo("[name]Dto", IgnoreNoAttributes = new[] { typeof(DataMemberAttribute) })]
+    internal class IgnoreNoAttributes
     {
         [DataMember]
-        public string IgnoredProp { get; set; }
         public string NotIgnoredProp { get; set; }
 
+        public string IgnoredProp { get; set; }
     }
 }

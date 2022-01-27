@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using MapsterToolDemo.AttributeBase;
+using AttributeBase;
 
-namespace MapsterToolDemo.AttributeBase
+namespace AttributeBase
 {
     public partial class ChangePropTypeDto
     {

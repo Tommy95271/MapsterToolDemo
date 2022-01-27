@@ -5,11 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MapsterToolDemo.AttributeBase
+namespace AttributeBase
 {
-    [AdaptTo("[name]Dto", MapToConstructor = true)]
-    public class ReadonlyProp
+    [AdaptTo("[name]Dto")]
+    internal class Adapt
     {
         public int Id { get; set; }
+        public string Name { get; set; }
     }
 }

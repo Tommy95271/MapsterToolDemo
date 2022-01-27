@@ -1,7 +1,6 @@
-﻿using MapsterToolDemo.AttributeBase;
-using System;
+﻿using System;
 
-namespace MapsterToolDemo
+namespace AttributeBase
 {
     internal class Program
     {
@@ -11,7 +10,6 @@ namespace MapsterToolDemo
             var extensionMethodDto = ExtensionMethodMapper.AdaptToDto(extensionMethod);
             var extensionMethodDto2 = ExtensionMethodMapper.AdaptTo(extensionMethod, null);
             Console.ReadLine();
-
         }
     }
 }
