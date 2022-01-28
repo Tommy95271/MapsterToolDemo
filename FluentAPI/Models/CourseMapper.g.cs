@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 using FluentAPI.CodeGen.Models;
 using FluentAPI.Domains;
+using FluentAPI.Enums;
 using Mapster;
+using Mapster.Utils;
 
 namespace FluentAPI.CodeGen.Models
 {
@@ -49,9 +51,10 @@ namespace FluentAPI.CodeGen.Models
                 {
                     StudentId = item.StudentId,
                     FirstName = item.FirstName,
-                    LastName = item.LastName,
+                    SurName = item.LastName,
                     CourseId = item.CourseId,
-                    Course = TypeAdapterConfig1.GetMapFunction<Course, CourseDto>().Invoke(item.Course)
+                    Course = TypeAdapterConfig1.GetMapFunction<Course, CourseDto>().Invoke(item.Course),
+                    Grade = Enum<Grade>.ToString(item.Grade)
                 });
                 i++;
             }
@@ -77,9 +80,10 @@ namespace FluentAPI.CodeGen.Models
                 {
                     StudentId = item.StudentId,
                     FirstName = item.FirstName,
-                    LastName = item.LastName,
+                    SurName = item.LastName,
                     CourseId = item.CourseId,
-                    Course = TypeAdapterConfig1.GetMapFunction<Course, CourseDto>().Invoke(item.Course)
+                    Course = TypeAdapterConfig1.GetMapFunction<Course, CourseDto>().Invoke(item.Course),
+                    Grade = Enum<Grade>.ToString(item.Grade)
                 });
                 i++;
             }

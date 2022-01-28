@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FluentAPI.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -16,5 +17,6 @@ namespace FluentAPI.Domains
         public Course Course { get; set; }
         [DataMember]
         public string IgnoredProp { get; set; }
+        public Grade Grade { get; set; }
     }
 }

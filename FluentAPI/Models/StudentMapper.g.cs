@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 using FluentAPI.CodeGen.Models;
 using FluentAPI.Domains;
+using FluentAPI.Enums;
 using Mapster;
+using Mapster.Utils;
 
 namespace FluentAPI.CodeGen.Models
 {
@@ -15,9 +17,10 @@ namespace FluentAPI.CodeGen.Models
             {
                 StudentId = p1.StudentId,
                 FirstName = p1.FirstName,
-                LastName = p1.LastName,
+                SurName = p1.LastName,
                 CourseId = p1.CourseId,
-                Course = funcMain1(p1.Course)
+                Course = funcMain1(p1.Course),
+                Grade = Enum<Grade>.ToString(p1.Grade)
             };
         }
         public static StudentDto AdaptTo(this Student p4, StudentDto p5)
@@ -30,9 +33,10 @@ namespace FluentAPI.CodeGen.Models
             
             result.StudentId = p4.StudentId;
             result.FirstName = p4.FirstName;
-            result.LastName = p4.LastName;
+            result.SurName = p4.LastName;
             result.CourseId = p4.CourseId;
             result.Course = funcMain3(p4.Course, result.Course);
+            result.Grade = Enum<Grade>.ToString(p4.Grade);
             return result;
             
         }

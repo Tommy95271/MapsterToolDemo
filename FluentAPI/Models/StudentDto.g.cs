@@ -6,8 +6,9 @@ namespace FluentAPI.CodeGen.Models
     {
         public int StudentId { get; set; }
         public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string SurName { get; set; }
         public int CourseId { get; set; }
         public CourseDto Course { get; set; }
+        public string Grade { get; set; }
     }
 }

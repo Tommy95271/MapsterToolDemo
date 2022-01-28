@@ -20,7 +20,11 @@ namespace FluentAPI.Config
                 {
                     cfg.Ignore(poco => poco.IgnoredProp2);
                 })
-                .ForType<Student>()
+                .ForType<Student>(cfg =>
+                {
+                    cfg.Map(poco => poco.LastName, "SurName");
+                    cfg.Map(poco => poco.Grade, typeof(string));
+                })
                 .ExcludeTypes(typeof(SchoolContext))
                 .ExcludeTypes(type => type.IsEnum)
                 .IgnoreAttributes(typeof(DataMemberAttribute));
