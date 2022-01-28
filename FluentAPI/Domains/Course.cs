@@ -10,5 +10,6 @@ namespace FluentAPI.Domains
     {
         public int Id { get; set; }
         public List<Student> Students { get; set; }
+        public string IgnoredProp2 { get; set; }
     }
 }

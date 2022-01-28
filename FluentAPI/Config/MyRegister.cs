@@ -16,7 +16,11 @@ namespace FluentAPI.Config
         {
             // Generate Model
             config.AdaptTo("[name]Dto")
-                .ForAllTypesInNamespace(Assembly.GetExecutingAssembly(), "FluentAPI.Domains")
+                .ForType<Course>(cfg =>
+                {
+                    cfg.Ignore(poco => poco.IgnoredProp2);
+                })
+                .ForType<Student>()
                 .ExcludeTypes(typeof(SchoolContext))
                 .ExcludeTypes(type => type.IsEnum)
                 .IgnoreAttributes(typeof(DataMemberAttribute));
