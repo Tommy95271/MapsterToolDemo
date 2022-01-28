@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,7 +18,8 @@ namespace FluentAPI.Config
             config.AdaptTo("[name]Dto")
                 .ForAllTypesInNamespace(Assembly.GetExecutingAssembly(), "FluentAPI.Domains")
                 .ExcludeTypes(typeof(SchoolContext))
-                .ExcludeTypes(type => type.IsEnum);
+                .ExcludeTypes(type => type.IsEnum)
+                .IgnoreAttributes(typeof(DataMemberAttribute));
 
             // Generate Extension Method
             config.GenerateMapper("[name]Mapper")
