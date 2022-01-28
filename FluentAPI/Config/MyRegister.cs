@@ -15,7 +15,7 @@ namespace FluentAPI.Config
         public void Register(CodeGenerationConfig config)
         {
             // Generate Model
-            config.AdaptTo("[name]Dto")
+            config.AdaptTwoWays("[name]Dto")
                 .ForType<Course>(cfg =>
                 {
                     cfg.Ignore(poco => poco.IgnoredProp2);
