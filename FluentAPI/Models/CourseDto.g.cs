@@ -5,7 +5,13 @@ namespace FluentAPI.CodeGen.Models
 {
     public partial class CourseDto
     {
-        public int Id { get; set; }
-        public List<Person> Students { get; set; }
+        public int Id { get; }
+        public List<Person> Students { get; }
+        
+        public CourseDto(int id, List<Person> students)
+        {
+            this.Id = id;
+            this.Students = students;
+        }
     }
 }

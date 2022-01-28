@@ -4,11 +4,21 @@ namespace FluentAPI.CodeGen.Models
 {
     public partial class StudentDto
     {
-        public int StudentId { get; set; }
-        public string FirstName { get; set; }
-        public string SurName { get; set; }
-        public int CourseId { get; set; }
-        public CourseDto Course { get; set; }
-        public string Grade { get; set; }
+        public int StudentId { get; }
+        public string FirstName { get; }
+        public string SurName { get; }
+        public int CourseId { get; }
+        public CourseDto Course { get; }
+        public string Grade { get; }
+        
+        public StudentDto(int studentId, string firstName, string surName, int courseId, CourseDto course, string grade)
+        {
+            this.StudentId = studentId;
+            this.FirstName = firstName;
+            this.SurName = surName;
+            this.CourseId = courseId;
+            this.Course = course;
+            this.Grade = grade;
+        }
     }
 }

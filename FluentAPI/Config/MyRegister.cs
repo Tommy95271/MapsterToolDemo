@@ -27,9 +27,11 @@ namespace FluentAPI.Config
                 })
                 .ForType<Person>()
                 .AlterType<Student, Person>()
+                .MapToConstructor(true)
                 .ExcludeTypes(typeof(SchoolContext))
                 .ExcludeTypes(type => type.IsEnum)
                 .IgnoreAttributes(typeof(DataMemberAttribute));
+
 
             // Generate Extension Method
             config.GenerateMapper("[name]Mapper")
