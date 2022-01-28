@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using FluentAPI.MyModels;
+using FluentAPI.CodeGen.Models;
 
-namespace FluentAPI.MyModels
+namespace FluentAPI.CodeGen.Models
 {
     public partial class CourseDto
     {

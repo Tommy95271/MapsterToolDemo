@@ -1,4 +1,4 @@
-﻿using FluentAPI.MyModels;
+﻿using FluentAPI.Domains;
 using Mapster;
 using System;
 using System.Collections.Generic;
@@ -15,7 +15,7 @@ namespace FluentAPI.Config
         {
             // Generate Model
             config.AdaptTo("[name]Dto")
-                .ForAllTypesInNamespace(Assembly.GetExecutingAssembly(), "FluentAPI.MyModels");
+                .ForAllTypesInNamespace(Assembly.GetExecutingAssembly(), "FluentAPI.Domains");
 
             // Generate Extension Method
             config.GenerateMapper("[name]Mapper")
