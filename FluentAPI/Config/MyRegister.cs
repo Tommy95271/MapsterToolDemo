@@ -25,6 +25,8 @@ namespace FluentAPI.Config
                     cfg.Map(poco => poco.LastName, "SurName");
                     cfg.Map(poco => poco.Grade, typeof(string));
                 })
+                .ForType<Person>()
+                .AlterType<Student, Person>()
                 .ExcludeTypes(typeof(SchoolContext))
                 .ExcludeTypes(type => type.IsEnum)
                 .IgnoreAttributes(typeof(DataMemberAttribute));

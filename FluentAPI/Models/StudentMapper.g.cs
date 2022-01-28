@@ -2,15 +2,12 @@ using System.Collections.Generic;
 using FluentAPI.CodeGen.Models;
 using FluentAPI.Domains;
 using FluentAPI.Enums;
-using Mapster;
 using Mapster.Utils;
 
 namespace FluentAPI.CodeGen.Models
 {
     public static partial class StudentMapper
     {
-        private static TypeAdapterConfig TypeAdapterConfig1;
-        
         public static StudentDto AdaptToDto(this Student p1)
         {
             return p1 == null ? null : new StudentDto()
@@ -64,13 +61,13 @@ namespace FluentAPI.CodeGen.Models
             
         }
         
-        private static List<StudentDto> funcMain2(List<Student> p3)
+        private static List<Person> funcMain2(List<Student> p3)
         {
             if (p3 == null)
             {
                 return null;
             }
-            List<StudentDto> result = new List<StudentDto>(p3.Count);
+            List<Person> result = new List<Person>(p3.Count);
             
             int i = 0;
             int len = p3.Count;
@@ -78,20 +75,24 @@ namespace FluentAPI.CodeGen.Models
             while (i < len)
             {
                 Student item = p3[i];
-                result.Add(TypeAdapterConfig1.GetMapFunction<Student, StudentDto>().Invoke(item));
+                result.Add(item == null ? null : new Person()
+                {
+                    FirstName = item.FirstName,
+                    LastName = item.LastName
+                });
                 i++;
             }
             return result;
             
         }
         
-        private static List<StudentDto> funcMain4(List<Student> p8, List<StudentDto> p9)
+        private static List<Person> funcMain4(List<Student> p8, List<Person> p9)
         {
             if (p8 == null)
             {
                 return null;
             }
-            List<StudentDto> result = new List<StudentDto>(p8.Count);
+            List<Person> result = new List<Person>(p8.Count);
             
             int i = 0;
             int len = p8.Count;
@@ -99,7 +100,11 @@ namespace FluentAPI.CodeGen.Models
             while (i < len)
             {
                 Student item = p8[i];
-                result.Add(TypeAdapterConfig1.GetMapFunction<Student, StudentDto>().Invoke(item));
+                result.Add(item == null ? null : new Person()
+                {
+                    FirstName = item.FirstName,
+                    LastName = item.LastName
+                });
                 i++;
             }
             return result;

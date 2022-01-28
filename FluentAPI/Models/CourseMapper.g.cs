@@ -1,16 +1,11 @@
 using System.Collections.Generic;
 using FluentAPI.CodeGen.Models;
 using FluentAPI.Domains;
-using FluentAPI.Enums;
-using Mapster;
-using Mapster.Utils;
 
 namespace FluentAPI.CodeGen.Models
 {
     public static partial class CourseMapper
     {
-        private static TypeAdapterConfig TypeAdapterConfig1;
-        
         public static CourseDto AdaptToDto(this Course p1)
         {
             return p1 == null ? null : new CourseDto()
@@ -33,13 +28,13 @@ namespace FluentAPI.CodeGen.Models
             
         }
         
-        private static List<StudentDto> funcMain1(List<Student> p2)
+        private static List<Person> funcMain1(List<Student> p2)
         {
             if (p2 == null)
             {
                 return null;
             }
-            List<StudentDto> result = new List<StudentDto>(p2.Count);
+            List<Person> result = new List<Person>(p2.Count);
             
             int i = 0;
             int len = p2.Count;
@@ -47,14 +42,10 @@ namespace FluentAPI.CodeGen.Models
             while (i < len)
             {
                 Student item = p2[i];
-                result.Add(item == null ? null : new StudentDto()
+                result.Add(item == null ? null : new Person()
                 {
-                    StudentId = item.StudentId,
                     FirstName = item.FirstName,
-                    SurName = item.LastName,
-                    CourseId = item.CourseId,
-                    Course = TypeAdapterConfig1.GetMapFunction<Course, CourseDto>().Invoke(item.Course),
-                    Grade = Enum<Grade>.ToString(item.Grade)
+                    LastName = item.LastName
                 });
                 i++;
             }
@@ -62,13 +53,13 @@ namespace FluentAPI.CodeGen.Models
             
         }
         
-        private static List<StudentDto> funcMain2(List<Student> p5, List<StudentDto> p6)
+        private static List<Person> funcMain2(List<Student> p5, List<Person> p6)
         {
             if (p5 == null)
             {
                 return null;
             }
-            List<StudentDto> result = new List<StudentDto>(p5.Count);
+            List<Person> result = new List<Person>(p5.Count);
             
             int i = 0;
             int len = p5.Count;
@@ -76,14 +67,10 @@ namespace FluentAPI.CodeGen.Models
             while (i < len)
             {
                 Student item = p5[i];
-                result.Add(item == null ? null : new StudentDto()
+                result.Add(item == null ? null : new Person()
                 {
-                    StudentId = item.StudentId,
                     FirstName = item.FirstName,
-                    SurName = item.LastName,
-                    CourseId = item.CourseId,
-                    Course = TypeAdapterConfig1.GetMapFunction<Course, CourseDto>().Invoke(item.Course),
-                    Grade = Enum<Grade>.ToString(item.Grade)
+                    LastName = item.LastName
                 });
                 i++;
             }

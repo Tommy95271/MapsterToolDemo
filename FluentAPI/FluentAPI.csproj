@@ -22,6 +22,10 @@
 		<Generated Include="**\*.g.cs" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Models\" />
+	</ItemGroup>
+
 	<Target Name="CleanGenerated">
 		<Delete Files="@(Generated)" />
 	</Target>
