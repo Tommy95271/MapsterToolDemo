@@ -15,7 +15,9 @@ namespace FluentAPI.Config
         {
             // Generate Model
             config.AdaptTo("[name]Dto")
-                .ForAllTypesInNamespace(Assembly.GetExecutingAssembly(), "FluentAPI.Domains");
+                .ForAllTypesInNamespace(Assembly.GetExecutingAssembly(), "FluentAPI.Domains")
+                .ExcludeTypes(typeof(SchoolContext))
+                .ExcludeTypes(type => type.IsEnum);
 
             // Generate Extension Method
             config.GenerateMapper("[name]Mapper")
