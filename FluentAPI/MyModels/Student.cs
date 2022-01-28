@@ -13,5 +13,14 @@ namespace FluentAPI.MyModels
         public string LastName { get; set; }
         public int CourseId { get; set; }
         public Course Course { get; set; }
+
+        public string GetFullName()
+        {
+            return $"{FirstName} {LastName}";
+        }
+        public void console()
+        {
+            Console.WriteLine($"{FirstName} {LastName}");
+        }
     }
 }
